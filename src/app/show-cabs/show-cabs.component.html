@@ -1,0 +1,29 @@
+
+<app-nav-bar></app-nav-bar>
+<section id="advertisers" class="advertisers-service-sec pt-5 pb-5">
+  <div class="container">
+    <div class="row">
+      <div class="section-header text-center">
+        <h2 class="fw-bold fs-1">
+          Available
+          <span class="b-class-secondary">Cab </span>Services
+        </h2>
+        <p class="sec-icon"><i class="fa-solid fa-gear"></i></p>
+      </div>
+    </div>
+    <div class="row mt-5 mt-md-4 row-cols-1 row-cols-sm-1 row-cols-md-3 justify-content-center" *ngIf ="cabDetails">
+      <div class="col" *ngFor="let cab of cabDetails;let i = index">
+        <div class="service-card">
+          <div class="icon-wrapper">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <h3>{{cab.carName}}</h3>
+          <p>
+            <button (click)="bookCab(i)">Book Cab</button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ADVERTISERS SERVICE CARD ENDED -->

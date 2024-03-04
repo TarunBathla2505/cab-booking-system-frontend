@@ -1,0 +1,35 @@
+
+<app-nav-bar/>
+
+
+
+
+<form #bookingForm="ngForm" (ngSubmit)="onSubmit(bookingForm.value)">
+  <div class="form-group">
+    <label for="pickupLocation">Pickup Location</label>
+    <input type="text" id="pickupLocation" name="pickupLocation" class="form-control" ngModel required>
+  </div>
+  
+  <div class="form-group">
+    <label for="fromDateTime">Pickup Date and Time</label>
+    <input type="datetime-local" id="fromDateTime" name="fromDateTime" class="form-control" ngModel required>
+  </div>
+  
+  <div class="form-group">
+    <label for="dropLocation">Drop Location</label>
+    <input type="text" id="dropLocation" name="dropLocation" class="form-control" ngModel required>
+  </div>
+  
+  <div class="form-group">
+    <label for="toDateTime">Drop Date and Time</label>
+    <input type="datetime-local" id="toDateTime" name="toDateTime" class="form-control" ngModel required>
+  </div>
+  
+  <div class="form-group">
+    <label for="distanceInKm">Distance (in km)</label>
+    <input type="number" id="distanceInKm" name="distanceInKm" class="form-control" ngModel required>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form> 
+

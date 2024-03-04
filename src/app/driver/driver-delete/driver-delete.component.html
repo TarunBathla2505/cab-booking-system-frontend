@@ -1,0 +1,10 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+    <h2>Delete Driver</h2>
+    <div>
+      <label for="driverId">Enter Driver ID:</label>
+      <input type="number" id="driverId" [(ngModel)]="driverIdToDelete" name="driverId">
+    </div>
+    <button (click)="onDelete()">Delete</button>
+  </div>
+  

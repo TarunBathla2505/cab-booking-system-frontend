@@ -1,0 +1,34 @@
+<app-admin-nav></app-admin-nav>
+
+<div class="table-container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Driver ID</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Address</th>
+        <th>Mobile Number</th>
+        <th>Email</th>
+        <th>License No</th>
+        <th>Rating</th>
+        <th>Current Location</th>
+        <th>Current Driver Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let driver of drivers">
+        <td>{{ driver.driverId }}</td>
+        <td>{{ driver.userName }}</td>
+        <td>{{ driver.password }}</td>
+        <td>{{ driver.address }}</td>
+        <td>{{ driver.mobileNumber }}</td>
+        <td>{{ driver.email }}</td>
+        <td>{{ driver.licenceNo }}</td>
+        <td>{{ driver.rating }}</td>
+        <td>{{ driver.currLocation }}</td>
+        <td>{{ driver.currDriverStatus }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

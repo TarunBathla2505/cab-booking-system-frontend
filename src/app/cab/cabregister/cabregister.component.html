@@ -1,0 +1,60 @@
+<app-admin-nav></app-admin-nav>
+<div class="container">
+    <h2>Cab Registration</h2>
+    <form [formGroup]="cabForm" (ngSubmit)="onSubmit()">
+
+        
+
+      <div class="form-group">
+        <label for="carType">Car Type</label>
+        <input type="text" formControlName="carType" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.carType.errors && f.carType.errors['required'] }">
+        <div *ngIf="submitted && f.carType.errors && f.carType.errors['required']" class="invalid-feedback">
+          Car Type is required
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="carName">Car Name</label>
+        <input type="text" formControlName="carName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.carName.errors && f.carName.errors['required'] }">
+        <div *ngIf="submitted && f.carName.errors && f.carName.errors['required']" class="invalid-feedback">
+          Car Name is required
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="carNumber">Car Number</label>
+        <input type="text" formControlName="carNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.carNumber.errors && f.carNumber.errors['required'] }">
+        <div *ngIf="submitted && f.carNumber.errors && f.carNumber.errors['required']" class="invalid-feedback">
+          Car Number is required
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="perKmRate">Per Kilometer Rate</label>
+        <input type="number" formControlName="perKmRate" class="form-control" [ngClass]="{ 'is-invalid': submitted && (f.perKmRate.errors && (f.perKmRate.errors['required'] || f.perKmRate.errors['min'] || f.perKmRate.errors['max'])) }">
+        <div *ngIf="submitted && f.perKmRate.errors">
+          <div *ngIf="f.perKmRate.errors['required']" class="invalid-feedback">Per Kilometer Rate is required</div>
+          <div *ngIf="f.perKmRate.errors['min']" class="invalid-feedback">Per Kilometer Rate must be greater than 0</div>
+          <div *ngIf="f.perKmRate.errors['max']" class="invalid-feedback">Per Kilometer Rate is too high</div>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="currLocation">Current Location</label>
+        <input type="text" formControlName="currLocation" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.currLocation.errors && f.currLocation.errors['required'] }">
+        <div *ngIf="submitted && f.currLocation.errors && f.currLocation.errors['required']" class="invalid-feedback">
+          Current Location is required
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="cabCurrStatus">Current Status</label>
+        <input type="text" formControlName="cabCurrStatus" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cabCurrStatus.errors && f.cabCurrStatus.errors['required'] }">
+        <div *ngIf="submitted && f.cabCurrStatus.errors && f.cabCurrStatus.errors['required']" class="invalid-feedback">
+          Current Status is required
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>

@@ -1,0 +1,22 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container">
+    <h2>View Driver</h2>
+    <form [formGroup]="driverIdForm" (ngSubmit)="onSubmitDriverId()">
+      <div class="form-group">
+        <label for="driverId">Enter Driver ID:</label>
+        <input type="number" id="driverId" formControlName="driverId" class="form-control">
+      </div>
+      <button type="submit" class="btn btn-primary">Get Driver Details</button>
+    </form>
+  
+    <div *ngIf="showDriverDetails">
+      <h3>Driver Details</h3>
+      <p><strong>Driver ID:</strong> {{ driver.driverId }}</p>
+      <p><strong>License Number:</strong> {{ driver.licenceNo }}</p>
+      <p><strong>Rating:</strong> {{ driver.rating }}</p>
+      <p><strong>Current Location:</strong> {{ driver.currLocation }}</p>
+      <p><strong>Current Driver Status:</strong> {{ driver.currDriverStatus }}</p>
+    </div>
+  </div>
+  

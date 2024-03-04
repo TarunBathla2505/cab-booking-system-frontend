@@ -1,0 +1,12 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container">
+  <h2>View Cabs of Type</h2>
+  <label for="carType">Car Type:</label>
+  <select id="mySelect" name="mySelect" [(ngModel)]="selectedOption">
+    <option value="Sedan">Sedan</option>
+    <option value="XUV">XUV</option>
+    <option value="Sports">Sports</option>
+  </select>
+  <button (click)="getCabsOfType()">View Cabs</button>
+</div>

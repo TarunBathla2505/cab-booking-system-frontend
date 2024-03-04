@@ -1,0 +1,36 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container">
+    <h2>Update Driver</h2>
+    <form #driverIdForm="ngForm" (ngSubmit)="onSubmitDriverId(driverIdForm)">
+      <div class="form-group">
+        <label for="driverId">Enter Driver ID:</label>
+        <input type="number" id="driverId" name="driverId" ngModel required class="form-control">
+      </div>
+      <button type="submit" class="btn btn-primary">Get Driver Details</button>
+    </form>
+  
+    <div *ngIf="showForm">
+      <h3>Update Driver Details</h3>
+      <form #updateForm="ngForm" (ngSubmit)="onSubmitUpdate(updateForm)">
+        <div class="form-group">
+          <label for="licenceNo">License Number:</label>
+          <input type="text" id="licenceNo" name="licenceNo" ngModel required class="form-control" [(ngModel)]="driver.licenceNo">
+        </div>
+        <div class="form-group">
+          <label for="rating">Rating:</label>
+          <input type="number" id="rating" name="rating" ngModel required class="form-control" [(ngModel)]="driver.rating">
+        </div>
+        <div class="form-group">
+          <label for="currLocation">Current Location:</label>
+          <input type="text" id="currLocation" name="currLocation" ngModel required class="form-control" [(ngModel)]="driver.currLocation">
+        </div>
+        <div class="form-group">
+          <label for="currDriverStatus">Current Driver Status:</label>
+          <input type="text" id="currDriverStatus" name="currDriverStatus" ngModel required class="form-control" [(ngModel)]="driver.currDriverStatus">
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+      </form>
+    </div>
+  </div>
+  

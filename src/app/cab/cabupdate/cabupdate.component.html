@@ -1,0 +1,37 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container mt-4">
+  <h2>Update Cab</h2>
+  <div *ngIf="!showForm">
+    <label for="cabId">Enter Cab ID:</label>
+    <input type="number" id="cabId" name="cabId" [(ngModel)]="cabId">
+    <button type="button" class="btn btn-primary" (click)="getCabDetails()">Get Cab Details</button>
+  </div>
+  <form *ngIf="showForm" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="carType">Car Type:</label>
+      <input type="text" id="carType" name="carType" formControlName="carType" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="carName">Car Name:</label>
+      <input type="text" id="carName" name="carName" formControlName="carName" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="carNumber">Car Number:</label>
+      <input type="text" id="carNumber" name="carNumber" formControlName="carNumber" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="perKmRate">Per Km Rate:</label>
+      <input type="number" id="perKmRate" name="perKmRate" formControlName="perKmRate" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="currLocation">Current Location:</label>
+      <input type="text" id="currLocation" name="currLocation" formControlName="currLocation" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="cabCurrStatus">Cab Current Status:</label>
+      <input type="text" id="cabCurrStatus" name="cabCurrStatus" formControlName="cabCurrStatus" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>

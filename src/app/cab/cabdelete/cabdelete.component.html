@@ -1,0 +1,8 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+    <h2>Delete Cab</h2>
+    <label for="cabIdToDelete">Enter Cab ID to delete:</label>
+    <input type="number" id="cabIdToDelete" [(ngModel)]="cabIdToDelete" name="cabIdToDelete" required>
+    <button (click)="onDelete()">Delete</button>
+  </div>
+  

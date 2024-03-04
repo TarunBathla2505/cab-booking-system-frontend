@@ -1,0 +1,47 @@
+<app-admin-nav></app-admin-nav>
+
+
+<div class="form-container">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="selectOption">Select Car Type:</label>
+      <select id="selectOption" name="selectOption" class="form-control" [(ngModel)]="selectedOption">
+        <option value="SUV">SUV</option>
+        <option value="Sedan">Sedan</option>
+        <option value="Sports">Sports</option>
+      </select>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<div class="table-container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Cab ID</th>
+        <th>Car Type</th>
+        <th>Car Name</th>
+        <th>Car Number</th>
+        <th>Per Km Rate</th>
+        <th>Cab Current Status</th>
+        <th>Driver</th>
+        <th>Current Location</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cab of cabs">
+        <td>{{ cab.cabId }}</td>
+        <td>{{ cab.carType }}</td>
+        <td>{{ cab.carName }}</td>
+        <td>{{ cab.carNumber }}</td>
+        <td>{{ cab.perKmRate }}</td>
+        <td>{{ cab.cabCurrStatus }}</td>
+        <td>{{ cab.driver.userName }}</td>
+        <td>{{ cab.currLocation }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

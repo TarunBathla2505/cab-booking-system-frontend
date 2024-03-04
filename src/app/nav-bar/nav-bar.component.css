@@ -1,0 +1,31 @@
+.header {
+  background-color: #333;
+  color: #fff;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logout {
+  margin-left: auto; /* Pushes the Logout link to the right */
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a.active {
+  font-weight: bold;
+}
